@@ -1,0 +1,15 @@
+FROM python:latest
+
+RUN apt-get update && apt-get install -y git
+
+RUN git clone https://github.com/jtarrieu/docker_lab_cgpt.git
+
+WORKDIR /epf-ptp-docker-chatgpt-lab
+
+RUN pip install -r requirements.txt
+
+ENV OPEN_AI=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
+
+EXPOSE 5000
+
+CMD ["flask", "--app", "hello", "run", "--host=0.0.0.0"]
