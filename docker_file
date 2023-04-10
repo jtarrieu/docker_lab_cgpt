@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git
 
 RUN git clone https://github.com/jtarrieu/docker_lab_cgpt.git
 
-WORKDIR /epf-ptp-docker-chatgpt-lab
+WORKDIR /docker_lab_cgpt
 
 RUN pip install -r requirements.txt
 
